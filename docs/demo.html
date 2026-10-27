@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>procrib process tree</title>
+<style>
+body{font:13px monospace;margin:1em 1.5em}
+.sub{color:#555;margin-bottom:.5em}
+.bar{margin-bottom:.8em}
+input{width:16em}
+summary{cursor:pointer}
+.kids{margin-left:1.2em;border-left:1px solid #bbb;padding-left:.7em}
+.leaf{margin-left:1em}
+.name{font-weight:bold}
+.dim{color:#777}
+.dim .name{font-weight:normal}
+.pid,.mem,.cpu{color:#444}
+.tag{font-size:smaller;border:1px solid #bbb;padding:0 4px}
+.tag.ok{color:#116611}
+.tag.bad{color:#a40000}
+.tag.warn{color:#7a5200}
+.meta{color:#555;margin-left:1.2em;word-break:break-all}
+.hit .name{background:#ffec99}
+</style></head><body>
+<h1>procrib</h1><div class="sub">2026-10-26 21:07:01, 14 processes</div>
+<div class="bar"><button id="open">expand all</button><button id="close">collapse all</button><input id="q" placeholder="filter by name, pid, path"></div>
+<details open><summary class="row"><span class="name">System</span> <span class="pid">4</span> <span class="mem">1.0 MB</span> <span class="cpu">410.2s</span></summary><div class="meta">started 2024-12-30T02:40:00Z, 12 threads, private 0 B</div><div class="kids">
+<details open><summary class="row dim"><span class="name">smss.exe</span> <span class="pid">620</span> <span class="mem">1.0 MB</span> <span class="cpu">0.3s</span> <span class="tag gone">no access</span></summary><div class="meta">started 2024-12-30T02:40:05Z, 12 threads, private 0 B</div><div class="kids">
+<details open><summary class="row dim"><span class="name">services.exe</span> <span class="pid">880</span> <span class="mem">9.0 MB</span> <span class="cpu">14.8s</span> <span class="tag gone">no access</span></summary><div class="meta">started 2024-12-30T02:40:40Z, 12 threads, private 6.0 MB</div><div class="kids">
+<details open><summary class="row dim"><span class="name">svchost.exe</span> <span class="pid">1044</span> <span class="mem">28.0 MB</span> <span class="cpu">22.1s</span> <span class="tag gone">no access</span></summary><div class="meta">started 2024-12-30T02:41:00Z, 12 threads, private 21.0 MB</div><div class="kids">
+<div class="leaf"><div class="row"><span class="name">RuntimeBroker.exe</span> <span class="pid">4100</span> <span class="mem">18.0 MB</span> <span class="cpu">2.4s</span> <span class="tag ok">signed</span></div><div class="meta">C:\Windows\System32\RuntimeBroker.exe</div><div class="meta cmd">C:\Windows\System32\RuntimeBroker.exe -Embedding</div><div class="meta">started 2024-12-30T02:55:00Z, 12 threads, private 13.0 MB</div></div>
+<div class="leaf"><div class="row"><span class="name">notepad.exe</span> <span class="pid">5320</span> <span class="mem">22.0 MB</span> <span class="cpu">0.4s</span> <span class="tag ok">signed (catalog)</span></div><div class="meta">C:\Windows\System32\notepad.exe</div><div class="meta cmd">notepad.exe notes.txt</div><div class="meta">started 2024-12-30T03:05:00Z, 12 threads, private 16.0 MB</div></div>
+</div></details>
+<div class="leaf"><div class="row"><span class="name">spoolsv.exe</span> <span class="pid">2210</span> <span class="mem">14.0 MB</span> <span class="cpu">0.9s</span> <span class="tag ok">signed</span></div><div class="meta">C:\Windows\System32\spoolsv.exe</div><div class="meta cmd">C:\Windows\System32\spoolsv.exe</div><div class="meta">started 2024-12-30T02:41:01Z, 12 threads, private 10.0 MB</div></div>
+<div class="leaf"><div class="row dim"><span class="name">gone.exe</span> <span class="pid">9100</span> <span class="tag gone">exited</span></div><div class="meta">started 2024-12-30T03:30:00Z, 12 threads, private 0 B</div></div>
+</div></details>
+</div></details>
+</div></details>
+<div class="leaf"><div class="row"><span class="name">stale-child.exe</span> <span class="pid">9500</span> <span class="mem">3.0 MB</span> <span class="cpu">0.1s</span> <span class="tag bad">unsigned</span> <span class="tag warn">parent pid 2210 was reused, ignored</span></div><div class="meta">C:\Temp\stale-child.exe</div><div class="meta cmd">stale-child.exe</div><div class="meta">started 2024-12-30T02:40:50Z, 12 threads, private 2.0 MB</div></div>
+<details open><summary class="row"><span class="name">explorer.exe</span> <span class="pid">3000</span> <span class="mem">160.0 MB</span> <span class="cpu">88.5s</span> <span class="tag ok">signed</span></summary><div class="meta">C:\Windows\explorer.exe</div><div class="meta cmd">C:\Windows\explorer.exe</div><div class="meta">started 2024-12-30T02:51:40Z, 12 threads, private 120.0 MB</div><div class="kids">
+<details open><summary class="row"><span class="name">cmd.exe</span> <span class="pid">6120</span> <span class="mem">5.0 MB</span> <span class="cpu">0.1s</span> <span class="tag ok">signed</span></summary><div class="meta">C:\Windows\System32\cmd.exe</div><div class="meta cmd">&quot;C:\Windows\System32\cmd.exe&quot;</div><div class="meta">started 2024-12-30T03:13:20Z, 12 threads, private 3.0 MB</div><div class="kids">
+<details open><summary class="row"><span class="name">build-helper.exe</span> <span class="pid">7044</span> <span class="mem">64.0 MB</span> <span class="cpu">31.0s</span> <span class="tag bad">unsigned</span></summary><div class="meta">D:\tools\build-helper.exe</div><div class="meta cmd">build-helper.exe --jobs 8</div><div class="meta">started 2024-12-30T03:20:00Z, 12 threads, private 48.0 MB</div><div class="kids">
+<div class="leaf"><div class="row"><span class="name">worker.exe</span> <span class="pid">7388</span> <span class="mem">41.0 MB</span> <span class="cpu">12.7s</span> <span class="tag bad">unsigned</span></div><div class="meta">D:\tools\worker.exe</div><div class="meta cmd">worker.exe --id 3</div><div class="meta">started 2024-12-30T03:20:10Z, 12 threads, private 30.0 MB</div></div>
+</div></details>
+</div></details>
+</div></details>
+<div class="leaf"><div class="row"><span class="name">updater.exe</span> <span class="pid">8800</span> <span class="mem">12.0 MB</span> <span class="cpu">1.2s</span> <span class="tag warn">invalid 0x800b0109</span> <span class="tag warn">parent 4321 not running</span></div><div class="meta">C:\Program Files\Acme\updater.exe</div><div class="meta cmd">updater.exe /silent</div><div class="meta">started 2024-12-30T03:10:00Z, 12 threads, private 9.0 MB</div></div>
+<script>
+const all = () => document.querySelectorAll('details');
+document.getElementById('open').onclick = () => all().forEach(d => d.open = true);
+document.getElementById('close').onclick = () => all().forEach(d => d.open = false);
+document.getElementById('q').oninput = e => {
+  const q = e.target.value.toLowerCase();
+  document.querySelectorAll('.row').forEach(r => r.classList.remove('hit'));
+  if (!q) return;
+  all().forEach(d => d.open = false);
+  document.querySelectorAll('.row').forEach(r => {
+    const box = r.closest('.leaf, details');
+    const meta = [...box.children].filter(c => c.classList.contains('meta')).map(c => c.textContent).join(' ');
+    if ((r.textContent + ' ' + meta).toLowerCase().includes(q)) {
+      r.classList.add('hit');
+      for (let d = r.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
+    }
+  });
+};
+</script></body></html>
