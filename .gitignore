@@ -1,0 +1,8 @@
+build/
+out/
+*.exe
+*.o
+*.obj
+.vs/
+CMakeUserPresets.json
+_scratch/
