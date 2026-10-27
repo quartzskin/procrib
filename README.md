@@ -32,8 +32,7 @@ Each process records its parent's PID, and Windows reuses PIDs. A process whose 
 
 Processes that cannot be opened show `[no access]` and still appear in the tree, since the process list itself includes the PID, parent, start time, threads and memory. Processes that exit between the list and the open show `exited`.
 
-## Known gaps
-
+## Limits
 - Run non-elevated, most services show no path or command line. Running as administrator helps but protected processes still refuse.
 - Signature check uses `WinVerifyTrust` on the file, falling back to the catalog database, with no revocation checking. It checks the file on disk, not the mapped image, so it says nothing about tampering in memory. Results are cached per path within one run.
 - CPU % is averaged across all logical processors and only appears from the second refresh in `--watch`.
